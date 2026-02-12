@@ -70,6 +70,7 @@ img {
   justify-content: space-between;
   max-width: 1280px;
   margin: 0 auto;
+  height: 100px;
   padding: 16px 24px;
 }
 
@@ -276,7 +277,7 @@ img {
 }
 
 .about-badge img {
-  height: 120px;
+  height: 450px;
   width: auto;
 }
 
@@ -854,6 +855,37 @@ img {
   text-align: center;
   width: 100%;
 }
+.cert-carousel {
+  position: relative;
+  height: 180px;
+  margin: 30px 0;
+}
+
+.cert-slide {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.cert-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cert-badge {
+  height: 110px;
+  margin-left: 85px;
+  margin-bottom: 12px;
+}
+
+.cert-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
 
 /* Industries */
 /* .industries {
