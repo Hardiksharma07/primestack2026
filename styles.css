@@ -121,12 +121,11 @@ img {
 /* Hero */
 .hero {
   position: relative;
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 140px ;
 }
 
 .hero-bg {
@@ -855,7 +854,7 @@ img {
   text-align: center;
   width: 100%;
 }
-.cert-carousel {
+/* .cert-carousel {
   position: relative;
   height: 180px;
   margin: 30px 0;
@@ -884,7 +883,47 @@ img {
 .cert-label {
   font-size: 14px;
   color: var(--text-secondary);
+} */
+ /* ===== Expertise Panel ===== */
+
+.services-expertise-panel {
+  text-align: center;
 }
+
+/* Carousel wrapper */
+.cert-carousel {
+  position: relative;
+  margin: 30px 0;
+}
+
+/* Each slide */
+.cert-slide {
+  display: none;
+  flex-direction: column;      /* 👈 STACK IMAGE ABOVE TEXT */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Active slide */
+.cert-slide.active {
+  display: flex;
+}
+
+/* Badge image */
+.cert-badge {
+  max-width: 140px;
+  height: auto;
+  margin-bottom: 15px;         /* 👈 space between image & text */
+  display: block;
+}
+
+/* Label */
+.cert-label {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
 
 
 /* Industries */
@@ -1316,4 +1355,220 @@ img {
   .services-grid {
     grid-template-columns: 1fr;
   }
+}
+/* ================================
+   GLOBAL RESPONSIVE FIXES
+================================ */
+section {
+  padding: clamp(60px, 8vw, 100px) 0;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+p {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+}
+
+/* Prevent layout overflow */
+.container,
+.header-inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: clamp(16px, 4vw, 24px);
+  padding-right: clamp(16px, 4vw, 24px);
+}
+
+/* =================================
+   HEADER RESPONSIVE
+================================= */
+@media (max-width: 1024px) {
+  .nav {
+    gap: 20px;
+  }
+
+  .logo img {
+    width: 200px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background: var(--bg-card);
+    width: 100%;
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .logo img {
+    width: 170px !important;
+  }
+}
+
+/* =================================
+   HERO SECTION
+================================= */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 120px 20px 80px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+/* =================================
+   ABOUT SECTION
+================================= */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .about-badge img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .about-text p {
+    max-width: 100%;
+  }
+}
+
+/* =================================
+   INDUSTRY STRATEGIES
+================================= */
+@media (max-width: 1024px) {
+  .section-header {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+}
+
+/* =================================
+   SERVICES SECTION
+================================= */
+@media (max-width: 1200px) {
+  .services-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =================================
+   INDUSTRIES SECTION (NEW DESIGN)
+================================= */
+@media (max-width: 1024px) {
+  .industries-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .industries-right img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .industries-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .industries-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =================================
+   PARTNERS SECTION
+================================= */
+@media (max-width: 1024px) {
+  .partners-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .partner-logos {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+/* =================================
+   FOOTER
+================================= */
+@media (max-width: 1024px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand img {
+    width: 180px !important;
+  }
+}
+@media (max-width: 1024px) {
+
+  .services-expertise-panel {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .cert-badge {
+    max-width: 110px;
+  }
+
 }
